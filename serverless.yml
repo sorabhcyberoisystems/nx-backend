@@ -1,0 +1,9 @@
+name: futurebright-frontend-${env.NODE_ENV}
+
+futureBrightNextApplication:
+  component: '@sls-next/serverless-component@3.7.0'
+  inputs:
+    bucketName: ${env.FUTURE_BRIGHT_BUCKET}
+    memory: 1024
+    cloudfront:
+      distributionId: ${env.CF_DISTRIBUTION_ID}

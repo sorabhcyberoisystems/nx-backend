@@ -1,0 +1,156 @@
+[
+    {
+      "name": "Future Bright X NFT",
+      "symbol": "FTB",
+      "description": "Future Bright NFT for solar panels",
+      "seller_fee_basis_points": 500,
+      "image": "https://www.knights.app/abcd5678?ext=png",
+      "animation_url": "https://www.knights.app/efgh1234?ext=mp4",
+      "external_url": "https://www.futurebright.com",
+      "attributes": [
+        {
+          "trait_type": "web",
+          "value": "yes"
+        },
+        {
+          "trait_type": "mobile",
+          "value": "yes"
+        },
+        {
+          "trait_type": "extension",
+          "value": "yes"
+        }
+      ],
+      "collection": {
+        "name": "Future Bright Collection",
+        "family": "Future Bright"
+      },
+      "properties": {
+        "files": [
+          {
+            "uri": "https://www.knigths.app/abcd5678?ext=png",
+            "type": "image/png"
+          },
+          {
+            "uri": "https://www.knigths.app/9876jkl",
+            "type": "unknown",
+            "cdn": true
+          },
+          {
+            "uri": "https://www.knights.app/efgh1234?ext=mp4",
+            "type": "video/mp4"
+          }
+        ],
+        "category": "image",
+        "creators": [
+          {
+            "address": "80c74n918374cb17264bx816497126xb49",
+            "share": 100
+          }
+        ]
+      }
+    },
+    {
+      "name": "Future Bright X1 NFT",
+      "symbol": "FTB",
+      "description": "Future Bright NFT for solar panels",
+      "seller_fee_basis_points": 500,
+      "image": "https://www.knights.app/abcd5678?ext=png",
+      "animation_url": "https://www.knights.app/efgh1234?ext=mp4",
+      "external_url": "https://www.futurebright.com",
+      "attributes": [
+        {
+          "trait_type": "web",
+          "value": "yes"
+        },
+        {
+          "trait_type": "mobile",
+          "value": "yes"
+        },
+        {
+          "trait_type": "extension",
+          "value": "yes"
+        }
+      ],
+      "collection": {
+        "name": "Future Bright Collection",
+        "family": "Future Bright"
+      },
+      "properties": {
+        "files": [
+          {
+            "uri": "https://www.knigths.app/abcd5678?ext=png",
+            "type": "image/png"
+          },
+          {
+            "uri": "https://www.knigths.app/9876jkl",
+            "type": "unknown",
+            "cdn": true
+          },
+          {
+            "uri": "https://www.knights.app/efgh1234?ext=mp4",
+            "type": "video/mp4"
+          }
+        ],
+        "category": "image",
+        "creators": [
+          {
+            "address": "80c74n918374cb17264bx816497126xb49",
+            "share": 100
+          }
+        ]
+      }
+    },
+    {
+      "name": "Future Bright X2 NFT",
+      "symbol": "FTB",
+      "description": "Future Bright NFT for solar panels",
+      "seller_fee_basis_points": 500,
+      "image": "https://www.knights.app/abcd5678?ext=png",
+      "animation_url": "https://www.knights.app/efgh1234?ext=mp4",
+      "external_url": "https://www.futurebright.com",
+      "attributes": [
+        {
+          "trait_type": "web",
+          "value": "yes"
+        },
+        {
+          "trait_type": "mobile",
+          "value": "yes"
+        },
+        {
+          "trait_type": "extension",
+          "value": "yes"
+        }
+      ],
+      "collection": {
+        "name": "Future Bright Collection",
+        "family": "Future Bright"
+      },
+      "properties": {
+        "files": [
+          {
+            "uri": "https://www.knigths.app/abcd5678?ext=png",
+            "type": "image/png"
+          },
+          {
+            "uri": "https://www.knigths.app/9876jkl",
+            "type": "unknown",
+            "cdn": true
+          },
+          {
+            "uri": "https://www.knights.app/efgh1234?ext=mp4",
+            "type": "video/mp4"
+          }
+        ],
+        "category": "image",
+        "creators": [
+          {
+            "address": "80c74n918374cb17264bx816497126xb49",
+            "share": 100
+          }
+        ]
+      }
+    }
+  ]
+  

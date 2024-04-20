@@ -1,0 +1,114 @@
+service: future-bright-backend
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  httpApi: 
+    cors: true
+    authorizers:
+      futureBrightJwtAuthorizer:
+        type: 'jwt'
+        identitySource: $request.header.Authorization
+        issueUrl: https://cognito-idp.us-east-1.amazonaws.com/${self:custom.cognitoPoolId.${opt:stage, 'dev'}}
+        audience:
+         - ${self:custom.cognitoClientId.${opt:stage, 'dev'}}
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+    NODE_OPTIONS: --enable-source-maps --stack-trace-limit=1000
+    APP_ENV: ${opt:stage, 'dev'}
+    IS_PRODUCTION: ${param:production}
+  iamRoleStatements:
+    - Effect: Allow
+      Action: 
+        - cognito-idp:AdminAddUserToGroup
+      Resources: '*'
+
+params:
+  prod:
+    production: true
+  default:
+    production: false  
+
+functions:
+  addUserToGroup:
+    handler: src/functions/user/addToGroup/handler.main
+    events:
+    - cognitoUserPool:
+        pool: FutureBrightPool
+        trigger: PostConfirmation
+        existing: true
+
+  getAllNftMetadata:
+    handler: src/functions/user/getAllNftMetadata/handler.main
+    events:
+    - httpApi:
+        method: get
+        path: /get-all-nft-metadata
+        # authorizer:
+        #   name: futureBrightJwtAuthorizer
+        #   type: request
+
+  loginToWallet:
+    handler: src/functions/user/loginToWallet/handler.main
+    events:
+    - httpApi:
+        method: post
+        path: /wallet-login
+        # authorizer:
+        #   name: futureBrightJwtAuthorizer
+        #   type: request
+        request:
+          schema:
+            application/json:
+              type: object
+              properties:
+                mnemonic:
+                  type: string
+                passphrase:
+                  type: string
+              required:
+                - mnemonic
+                - passphrase
+        bodyType: LoginToWalletRequestBody
+
+
+
+
+package:
+  individually: true
+
+plugins:
+  - serverless-auto-swagger
+  - serverless-esbuild
+  - serverless-plugin-typescript
+  - serverless-offline
+
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    exclude:
+     - aws-sdk
+    target: node14
+    define:
+      require.resolve: undefined
+    platform: node
+    concurrency: 10
+  autoswagger:
+    generateSwaggerOnDeploy: true
+    typefiles:
+      - './src/types/user.d.ts'
+    swaggerPath: docs
+    useStage: true  
+  cognitoPoolId:
+    dev: us-east-1_s2OFptMPq
+    qa: us-east-1_80EkS8Aaq
+    prod: us-east-1_6iaProvxF
+  cognitoClientId:
+    dev: 43kdctln7s48mgh4aoa9du1rgm
+    qa: 6ql43j8p6p65ln2mtbspabna9l
+    prod: 6ql43j8p6p65ln2mtbspabna9l

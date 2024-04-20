@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@futurebright/common": ["libs/common/src/index.ts"],
+      "@functions/*": ["apps/api/src/functions/*"],
+      "@libs/*": ["apps/api/src/libs/*"],
+      "@config/*": ["apps/api/src/config/*"],
+      "@mocks/*": ["apps/api/src/mocks/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
